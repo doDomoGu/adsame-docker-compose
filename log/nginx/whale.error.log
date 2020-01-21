@@ -1,3 +1,0 @@
-2020/01/20 14:11:19 [error] 50#0: *5 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.112.6, server: whale.com, request: "GET /api/ HTTP/1.0", upstream: "fastcgi://192.168.112.2:9000", host: "whale.com"
-2020/01/20 14:41:45 [error] 28#0: *3 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.128.6, server: whale.com, request: "POST /api/login HTTP/1.0", upstream: "fastcgi://192.168.128.3:9000", host: "whale.com"
-2020/01/20 14:42:06 [error] 32#0: *3 open() "/var/www/dosight/whale/api/public/login" failed (2: No such file or directory), client: 192.168.128.6, server: whale.com, request: "POST /api/login HTTP/1.0", host: "whale.com"

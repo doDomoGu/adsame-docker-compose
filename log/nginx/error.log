@@ -1,5 +1,0 @@
-2020/01/19 14:40:29 [emerg] 32#0: no port in upstream "phpupstream72" in /etc/nginx/conf.d/songtang.conf:50
-2020/01/19 14:40:30 [emerg] 33#0: no port in upstream "phpupstream72" in /etc/nginx/conf.d/songtang.conf:50
-2020/01/19 14:40:32 [emerg] 34#0: no port in upstream "phpupstream72" in /etc/nginx/conf.d/songtang.conf:50
-2020/01/19 14:40:35 [emerg] 35#0: no port in upstream "phpupstream72" in /etc/nginx/conf.d/songtang.conf:50
-2020/01/20 10:54:04 [error] 10#0: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.112.6, server: pma.com, request: "GET /index2.php HTTP/1.0", upstream: "fastcgi://192.168.112.2:9000", host: "pma.com"

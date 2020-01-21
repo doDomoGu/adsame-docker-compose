@@ -1,1 +1,0 @@
-2020/01/19 15:51:47 [error] 10#0: *9 open() "/var/www/dosight/favicon.ico" failed (2: No such file or directory), client: 172.23.0.1, server: dolphin.com, request: "GET /favicon.ico HTTP/1.0", host: "dolphin.com", referrer: "http://dolphin.com/"

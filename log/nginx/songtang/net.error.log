@@ -1,1 +1,0 @@
-2020/01/20 15:50:51 [error] 9#0: *5 open() "/var/www/www/songtang.net/favicon.ico" failed (2: No such file or directory), client: 192.168.160.6, server: localsongtang.net, request: "GET /favicon.ico HTTP/1.0", host: "localsongtang.net", referrer: "http://localsongtang.net/"
