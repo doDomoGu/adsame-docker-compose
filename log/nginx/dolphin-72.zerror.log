@@ -1,0 +1,4 @@
+2020/01/19 14:54:35 [error] 68#0: *1 "/var/www/dosight/22/index.php" is not found (2: No such file or directory), client: 172.24.0.1, server: dolphin-72.com, request: "GET / HTTP/1.0", host: "login.localsongtang.net"
+2020/01/19 14:55:31 [error] 68#0: *2 "/var/www/dosight/22/index.php" is not found (2: No such file or directory), client: 172.24.0.1, server: dolphin-72.com, request: "GET / HTTP/1.0", host: "login.localsongtang.net"
+2020/01/19 16:36:11 [error] 10#0: *93 open() "/var/www/dosight/favicon.ico" failed (2: No such file or directory), client: 172.23.0.1, server: dolphin-72.com, request: "GET /favicon.ico HTTP/1.0", host: "dolphin-72.com", referrer: "http://dolphin-72.com/explorer_oracle/login.php"
+2020/01/19 17:57:06 [error] 9#0: *9 open() "/var/www/dosight/favicon.ico" failed (2: No such file or directory), client: 172.30.0.1, server: dolphin-72.com, request: "GET /favicon.ico HTTP/1.0", host: "pma.com", referrer: "http://pma.com/"

@@ -1,0 +1,9 @@
+[19-Jan-2020 15:45:34 PRC] PHP Fatal error:  Cannot use 'Object' as class name as it is reserved in /var/www/www/songtang_app/vendor/yiisoft/yii2/base/Object.php on line 28
+[19-Jan-2020 18:10:26 PRC] PHP Warning:  oci_connect(): ORA-12533: TNS:illegal ADDRESS parameters in /var/www/dosight/explorer_oracle/system/os/lib/oracle.php on line 56
+[19-Jan-2020 18:10:26 PRC] PHP Warning:  oci_close() expects parameter 1 to be resource, boolean given in /var/www/dosight/explorer_oracle/system/os/lib/oracle.php on line 65
+[19-Jan-2020 18:10:27 PRC] PHP Warning:  oci_connect(): ORA-12533: TNS:illegal ADDRESS parameters in /var/www/dosight/explorer_oracle/system/os/lib/oracle.php on line 56
+[19-Jan-2020 18:10:27 PRC] PHP Warning:  oci_close() expects parameter 1 to be resource, boolean given in /var/www/dosight/explorer_oracle/system/os/lib/oracle.php on line 65
+[20-Jan-2020 18:01:37 PRC] PHP Warning:  oci_connect(): ORA-12533: TNS:illegal ADDRESS parameters in /var/www/dosight/explorer_oracle/system/os/lib/oracle.php on line 56
+[20-Jan-2020 18:01:37 PRC] PHP Warning:  oci_close() expects parameter 1 to be resource, boolean given in /var/www/dosight/explorer_oracle/system/os/lib/oracle.php on line 65
+[20-Jan-2020 18:01:38 PRC] PHP Warning:  oci_connect(): ORA-12533: TNS:illegal ADDRESS parameters in /var/www/dosight/explorer_oracle/system/os/lib/oracle.php on line 56
+[20-Jan-2020 18:01:38 PRC] PHP Warning:  oci_close() expects parameter 1 to be resource, boolean given in /var/www/dosight/explorer_oracle/system/os/lib/oracle.php on line 65

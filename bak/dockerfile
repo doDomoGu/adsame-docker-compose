@@ -1,0 +1,3 @@
+FROM dodomogu/php53:8
+
+CMD ["nginx","-g","'daemon off;'"]
