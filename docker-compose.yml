@@ -1,4 +1,4 @@
-version: "3"
+version: "2.2"
 services:
   ####  nginx 反向代理 ####
   nginx_proxy: 
@@ -12,7 +12,8 @@ services:
       - ./etc/nginx_proxy/conf.d:/etc/nginx/conf.d            # 虚拟域名配置目录
       - ./log/nginx_proxy:/var/log/nginx                      # 日志目录
     networks:
-      - webnet
+      webnet:
+        ipv4_address: 172.19.0.2
     depends_on: 
       - nginx
     links:
@@ -40,7 +41,8 @@ services:
       - ./etc/nginx/conf.d:/etc/nginx/conf.d            # 虚拟域名配置目录
       - ./log/nginx:/var/log/nginx                      # 日志目录
     networks:
-      - webnet
+      webnet:
+        ipv4_address: 172.19.0.3
     links:
       - php54
       - php72
@@ -62,7 +64,8 @@ services:
     expose:
       - 9000
     networks:
-      - webnet
+      webnet:
+        ipv4_address: 172.19.0.4
     links:
       - mysql
   #### php7.2.24  #######
@@ -77,10 +80,13 @@ services:
       - ./etc/php72/php-fpm.d:/etc/php-fpm.d      # php-fpm模块配置
       - ./log/php72:/var/log/php-fpm          # 日志目录
       - ./session/php72:/var/lib/php/session  # session目录
+    extra_hosts: 
+      - dolphin-72.com:172.19.0.1
     expose:
       - 9000
     networks:
-      - webnet
+      webnet:
+        ipv4_address: 172.19.0.5
     links:
       - mysql
   mysql:
@@ -98,7 +104,8 @@ services:
     expose:
       - 3306
     networks:
-      - webnet
+      webnet:
+        ipv4_address: 172.19.0.6
   node:
     container_name: node
     image: dodomogu/adsame:node  #node:12
@@ -113,7 +120,13 @@ services:
     expose:
       - 8080
     networks:
-      - webnet
+      webnet:
+        ipv4_address: 172.19.0.7
 networks:
   webnet:
     driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.19.0.0/16
+          gateway: 172.19.0.1
