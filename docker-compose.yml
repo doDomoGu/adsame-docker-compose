@@ -129,27 +129,27 @@ services:
   #   networks:
   #     webnet:
   #       ipv4_address: 172.19.0.6
-  # node:
-  #   container_name: node
-  #   image: dodomogu/adsame:node  #node:12
-  #   working_dir: /var/www
-  #   # command: npm run start
-  #   # ports:
-  #   #   - "8086:80"  #dolphin.com
-  #   #   - "8087:81"  #dolphin-72.com
-  #   tty: true
-  #   volumes:
-  #     - /Volumes/html:/var/www:cached     
-  #     # - ./etc/mysql:/etc/mysql        
-  #     # - ./log/node:/var/log/node                 # 日志目录
-  #   ports:
-  #     - "8080:8080"
-  #     - "3000:3000"
-  #   # expose:
-  #   #   - 8080
-  #   networks:
-  #     webnet:
-  #       ipv4_address: 172.19.0.7
+  node:
+    container_name: node
+    image: dodomogu/adsame:node  #node:12
+    working_dir: /var/www
+    # command: npm run start
+    # ports:
+    #   - "8086:80"  #dolphin.com
+    #   - "8087:81"  #dolphin-72.com
+    tty: true
+    volumes:
+      - /Volumes/html:/var/www:cached     
+      # - ./etc/mysql:/etc/mysql        
+      # - ./log/node:/var/log/node                 # 日志目录
+    ports:
+      - "8080:8080"
+      - "3000:3000"
+    # expose:
+    #   - 8080
+    networks:
+      webnet:
+        ipv4_address: 172.19.0.7
   # java:
   #   container_name: java
   #   image: java
