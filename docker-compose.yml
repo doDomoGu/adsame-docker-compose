@@ -95,8 +95,8 @@ services:
   #### php5.3.3 #####
   php53:
     container_name: php53
-    # image: dodomogu/adsame:php53
-    image: php53test:latest
+    image: dodomogu/adsame:php53
+    # image: php53test:latest
     volumes:
       - /Volumes/html:/var/www:cached                # 代码目录
       - ./etc/php53/php.ini:/etc/php.ini      # php主配置
@@ -112,6 +112,33 @@ services:
         ipv4_address: 172.19.0.8
     # links:
     #   - mysql
+  ##### php5.6.40 #####
+  php56:
+    container_name: php56
+    image: dodomogu/adsame:php56
+    volumes:
+      - /Volumes/html:/var/www:cached                # 代码目录
+      - ./etc/php56/php.ini:/etc/php.ini      # php主配置
+      - ./etc/php56/php.d:/etc/php.d          # php模块配置
+      - ./etc/php56/php-fpm.conf:/etc/php-fpm.conf      # php-fpm主配置
+      - ./etc/php56/php-fpm.d:/etc/php-fpm.d      # php-fpm模块配置
+      - ./log/php56:/var/log/php-fpm          # 日志目录
+      - ./session/php56:/var/lib/php/session  # session目录
+    expose:
+      - 9000
+    networks:
+      webnet:
+        ipv4_address: 172.19.0.11
+    # links:
+      # - mysql
+  redis:
+    container_name: redis
+    image: redis:latest
+    expose: 
+      - 6379
+    networks:
+      webnet:
+        ipv4_address: 172.19.0.12
   # mysql:
   #   container_name: mysql
   #   image: mysql:test
@@ -129,27 +156,27 @@ services:
   #   networks:
   #     webnet:
   #       ipv4_address: 172.19.0.6
-  node:
-    container_name: node
-    image: dodomogu/adsame:node  #node:12
-    working_dir: /var/www
-    # command: npm run start
-    # ports:
-    #   - "8086:80"  #dolphin.com
-    #   - "8087:81"  #dolphin-72.com
-    tty: true
-    volumes:
-      - /Volumes/html:/var/www:cached     
-      # - ./etc/mysql:/etc/mysql        
-      # - ./log/node:/var/log/node                 # 日志目录
-    ports:
-      - "8080:8080"
-      - "3000:3000"
-    # expose:
-    #   - 8080
-    networks:
-      webnet:
-        ipv4_address: 172.19.0.7
+  # node:
+  #   container_name: node
+  #   image: dodomogu/adsame:node  #node:12
+  #   working_dir: /var/www
+  #   # command: npm run start
+  #   # ports:
+  #   #   - "8086:80"  #dolphin.com
+  #   #   - "8087:81"  #dolphin-72.com
+  #   tty: true
+  #   volumes:
+  #     - /Volumes/html:/var/www:cached     
+  #     # - ./etc/mysql:/etc/mysql        
+  #     # - ./log/node:/var/log/node                 # 日志目录
+  #   ports:
+  #     - "8080:8080"
+  #     - "3000:3000"
+  #   # expose:
+  #   #   - 8080
+  #   networks:
+  #     webnet:
+  #       ipv4_address: 172.19.0.7
   # java:
   #   container_name: java
   #   image: java
