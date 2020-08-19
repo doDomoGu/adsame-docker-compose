@@ -26,7 +26,9 @@ services:
       - 80  # php54
       - 81  # php72
       - 82  # php53
+      - 83  # php53
       - 85  # php74
+      - 84  # laravel
     # ports:
     #   - "8086:80"  #dolphin.com
     #   - "8087:81"  #dolphin-72.com
@@ -50,11 +52,13 @@ services:
       - php72
       - php74
       - php53
+      - laravel
     depends_on: 
       - php54
       - php72
       - php74
       - php53
+      - laravel
   ##### php5.4.16 #####
   php54:
     container_name: php54
@@ -85,9 +89,11 @@ services:
       - ./etc/php72/php-fpm.conf:/etc/php-fpm.conf      # php-fpm主配置
       - ./etc/php72/php-fpm.d:/etc/php-fpm.d      # php-fpm模块配置
       - ./log/php72:/var/log/php-fpm          # 日志目录
+      - ./log/php72/samedataweblog:/data/weblog
       - ./session/php72:/var/lib/php/session  # session目录
     extra_hosts: 
       - dolphin-72.com:172.19.0.1
+      - samedata-api.com:172.19.0.1
     expose:
       - 9000
     networks:
@@ -126,7 +132,7 @@ services:
       - ./etc/php56/php-fpm.conf:/etc/php-fpm.conf      # php-fpm主配置
       - ./etc/php56/php-fpm.d:/etc/php-fpm.d      # php-fpm模块配置
       - ./log/php56:/var/log/php-fpm          # 日志目录
-      - ./log/samedata_weblog:/data/weblog/
+      - ./log/php56/samedataweblog:/data/weblog/
       - ./session/php56:/var/lib/php/session  # session目录
     expose:
       - 9000
@@ -141,12 +147,12 @@ services:
     image: dodomogu/adsame:laravel
     volumes:
       - /Volumes/html:/var/www:cached
-      - ./etc/laravel/php.ini:/etc/php.ini      # php主配置
-      - ./etc/laravel/php.d:/etc/php.d          # php模块配置
-      - ./etc/laravel/php-fpm.conf:/etc/php-fpm.conf      # php-fpm主配置
-      - ./etc/laravel/php-fpm.d:/etc/php-fpm.d      # php-fpm模块配置
-      - ./log/laravel:/var/log/php-fpm          # 日志目录
-      - ./session/laravel:/var/lib/php/session  # session目录
+      - ./etc/laravel/php.ini:/etc/opt/remi/php74/php.ini      # php主配置
+      - ./etc/laravel/php.d:/etc/opt/remi/php74/php.d          # php模块配置
+      - ./etc/laravel/php-fpm.conf:/etc/opt/remi/php74/php-fpm.conf      # php-fpm主配置
+      - ./etc/laravel/php-fpm.d:/etc/opt/remi/php74/php-fpm.d      # php-fpm模块配置
+      - ./log/laravel:/var/opt/remi/php74/log/php-fpm          # 日志目录
+      - ./session/laravel:/var/opt/remi/php74/lib/php/session  # session目录
     expose:
       - 9000
     networks:
@@ -166,6 +172,7 @@ services:
       - ./etc/php74/php-fpm.conf:/etc/opt/remi/php74/php-fpm.conf      # php-fpm主配置
       - ./etc/php74/php-fpm.d:/etc/opt/remi/php74/php-fpm.d      # php-fpm模块配置
       - ./log/php74:/var/opt/remi/php74/log/php-fpm          # 日志目录
+      - ./log/php74/samedataweblog:/data/weblog/
       - ./session/php74:/var/opt/remi/php74/lib/php/session  # session目录
     # extra_hosts: 
     #   - dolphin-72.com:172.19.0.1
@@ -214,7 +221,12 @@ services:
       # - ./log/node:/var/log/node                 # 日志目录
     ports:
       - "8080:8080"
+      - "8081:8081"
+      - "8082:8082"
       - "3000:3000"
+    extra_hosts: 
+      - dolphin-72.com:172.19.0.1
+      - samedata-api.com:172.19.0.1
     # expose:
     #   - 8080
     networks:
