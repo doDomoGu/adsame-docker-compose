@@ -152,6 +152,7 @@ services:
       - ./etc/laravel/php-fpm.conf:/etc/opt/remi/php74/php-fpm.conf      # php-fpm主配置
       - ./etc/laravel/php-fpm.d:/etc/opt/remi/php74/php-fpm.d      # php-fpm模块配置
       - ./log/laravel:/var/opt/remi/php74/log/php-fpm          # 日志目录
+      - ./log/laravel/samedataweblog:/data/weblog/
       - ./session/laravel:/var/opt/remi/php74/lib/php/session  # session目录
     expose:
       - 9000
